@@ -1,0 +1,49 @@
+package base;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+public class TestListener extends BaseTest implements ITestListener {
+
+	@Override
+	public void onTestStart(ITestResult result) {
+		
+		log.info("[Starting " + testMethodName + "]");
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		log.info("[Test " + testMethodName + " passed]");
+	}
+
+	@Override
+	public void onTestFailure(ITestResult result) {
+		log.info("[Test " + testMethodName + " failed]");
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onStart(ITestContext context) {
+		log.info("[TEST SUITE " + testSuiteName + " STARTED]");
+		log.info("[TEST " + testName + " STARTED]");
+	}
+
+	@Override
+	public void onFinish(ITestContext context) {
+		log.info("[TEST SUITE " + testSuiteName + " STARTED]");
+		log.info("[ALL " + testName + " FINISHED]");
+	}
+
+}

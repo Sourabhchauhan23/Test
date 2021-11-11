@@ -1,0 +1,31 @@
+package com.gol;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+public class SqServlet  extends HttpServlet{
+	
+public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		
+	PrintWriter out = res.getWriter();
+//	int k = (int)req.getAttribute("k");
+//	k = k * k;
+//	out.println("Sq of the sum of the numbers " + k);
+	
+//	int k= Integer.parseInt(req.getParameter("k"));	
+//	k = k * k;
+//	out.println("Sq of the sum of the numbers " + k);
+	
+	HttpSession session = req.getSession();
+	session.getAttribute("k");
+	k = k * k;
+	out.println("Sq of the sum of the numbers " + k);
+	
+	}
+
+}
